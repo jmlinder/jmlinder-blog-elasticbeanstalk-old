@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'mysite-dev.xa37kgm4mq.us-east-1.elasticbeanstalk.com',
     'blog.jmlinder.com',
-    'jmlinder.com'
+    'jmlinder.com',
+    'localhost'
 ]
 
 
