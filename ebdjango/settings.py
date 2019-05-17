@@ -25,7 +25,11 @@ SECRET_KEY = 'qa_%u2*#v&7g=oxf-sd^6t@*uhp@g!1eilmln)*spe!ic)a@cs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mysite-dev.xa37kgm4mq.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = [
+    'mysite-dev.xa37kgm4mq.us-east-1.elasticbeanstalk.com',
+    'blog.jmlinder.com',
+    'jmlinder.com'
+]
 
 
 # Application definition
