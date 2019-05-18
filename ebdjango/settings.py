@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'blog.jmlinder.com',
     'jmlinder.com',
     'localhost',
+    'test3.sczrybeprt.us-east-1.elasticbeanstalk.com'
 
 ]
 
@@ -79,6 +80,7 @@ WSGI_APPLICATION = 'ebdjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# Production
 if 'RDS_HOSTNAME' in os.environ:
     DATABASES = {
         'default': {
@@ -90,17 +92,18 @@ if 'RDS_HOSTNAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'jmlinder',
-            'USER': 'joe',
-            'PASSWORD': 'uts2kronos',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+
+# Local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': '',
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': '',
+#         'PORT': '',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -125,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
