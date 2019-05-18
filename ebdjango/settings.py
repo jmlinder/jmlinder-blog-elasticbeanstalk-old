@@ -97,10 +97,10 @@ if 'RDS_HOSTNAME' in os.environ:
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '',
-#         'USER': '',
-#         'PASSWORD': '',
-#         'HOST': '',
+#         'NAME': 'jmlinder',
+#         'USER': 'joe',
+#         'PASSWORD': 'uts2kronos',
+#         'HOST': 'localhost',
 #         'PORT': '',
 #     }
 # }
