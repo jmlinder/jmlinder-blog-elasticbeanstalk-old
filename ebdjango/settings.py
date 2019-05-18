@@ -26,10 +26,10 @@ SECRET_KEY = 'qa_%u2*#v&7g=oxf-sd^6t@*uhp@g!1eilmln)*spe!ic)a@cs'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'jmlinder-dev.xa37kgm4mq.us-east-1.elasticbeanstalk.com',
     'blog.jmlinder.com',
     'jmlinder.com',
-    'localhost'
+    'localhost',
+
 ]
 
 
@@ -90,6 +90,17 @@ if 'RDS_HOSTNAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'jmlinder',
+            'USER': 'joe',
+            'PASSWORD': 'uts2kronos',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -127,6 +138,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = 'static'
 
 LOGIN_REDIRECT_URL = '/'
