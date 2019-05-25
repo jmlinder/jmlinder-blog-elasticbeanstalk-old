@@ -44,7 +44,7 @@
           </li>
           <li class="nav-item justify-content-end">
             {% if user.is_authenticated %}
-              <a class="nav-link mr-auto">Logged in as {{ user.username }}</a>
+              <a class="nav-link mr-auto">Logged in as {{ user.username }}(<a href="{% url 'logout' %}">Log out</a>)</a>
             {% endif %}
           </li>
         </ul>
@@ -54,8 +54,6 @@
       {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="btn btn-primary"><i class="far fa-plus-square"></i> New Post</a>
         <a href="{% url 'post_draft_list' %}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Drafts</a>
-        {% else %}
-        <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-lock"> Login</i></a>
       {% endif %}
     </div>
     <div class="content container">
