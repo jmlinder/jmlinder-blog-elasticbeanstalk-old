@@ -42,16 +42,20 @@
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://www.instagram.com/jmlinder7/" >Instagram</a>
           </li>
+          <li class="nav-item justify-content-end">
+            {% if user.is_authenticated %}
+              <a class="nav-link mr-auto">Logged in as {{ user.username }}</a>
+            {% endif %}
+          </li>
         </ul>
       </div>
     </nav>
     <div class="container">
       {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="top-menu"><i class="far fa-plus-square"></i> New Post</a>
-        <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fas fa-pencil-alt"></i> Drafts</a>
-        <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+        <a href="{% url 'post_new' %}" class="btn btn-primary"><i class="far fa-plus-square"></i> New Post</a>
+        <a href="{% url 'post_draft_list' %}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Drafts</a>
         {% else %}
-        <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-lock"></i></a>
+        <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-lock"> Login</i></a>
       {% endif %}
     </div>
     <div class="content container">
