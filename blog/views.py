@@ -5,9 +5,13 @@ from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
+
 # Shows a list of all the posts
+def about(request):
+    return render(request, 'blog/about.html')
 
 
+# Shows a list of all the posts
 def post_list(request):
     posts = Post.objects.filter(
         published_date__lte=timezone.now()).order_by('published_date')
