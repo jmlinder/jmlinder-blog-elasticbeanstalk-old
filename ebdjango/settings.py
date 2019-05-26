@@ -26,10 +26,9 @@ SECRET_KEY = 'qa_%u2*#v&7g=oxf-sd^6t@*uhp@g!1eilmln)*spe!ic)a@cs'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'blog.jmlinder.com',
     'jmlinder.com',
     'localhost',
-    'test3.sczrybeprt.us-east-1.elasticbeanstalk.com'
+    'jmlinder2.mipvbpa28c.us-east-1.elasticbeanstalk.com'
 
 ]
 
@@ -99,7 +98,7 @@ if 'RDS_HOSTNAME' in os.environ:
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'jmlinder',
 #         'USER': 'joe',
-#         'PASSWORD': 'uts2kronos',
+#         'PASSWORD': 'password',
 #         'HOST': 'localhost',
 #         'PORT': '',
 #     }
@@ -144,3 +143,18 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
 LOGIN_REDIRECT_URL = '/'
+
+CORS_REPLACE_HTTPS_REFERER = True
+HOST_SCHEME = "https://"
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 1000000
+SECURE_FRAME_DENY = True
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
