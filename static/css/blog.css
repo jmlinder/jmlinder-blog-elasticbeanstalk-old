@@ -5,18 +5,26 @@ body {
 .container {
   height: 100%;
 }
+
+.date {
+  font-family: "Open Sans", sans-serif;
+}
+
 .header {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   color: ;
 }
+
+.joe {
+  width: 200px;
+  margin: 0 auto;
+}
+
 .post {
   font-family: "Open Sans", sans-serif;
 }
 
-.date {
-  font-family: "Open Sans", sans-serif;
-}
 .title {
   font-family: "IBM Plex Sans", sans-serif;
 }
