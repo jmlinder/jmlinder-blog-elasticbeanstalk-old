@@ -13,12 +13,12 @@ body {
 .header {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  color: ;
 }
 
 .joe {
-  width: 200px;
+  width: 50%;
   margin: 0 auto;
+  display: block;
 }
 
 .post {

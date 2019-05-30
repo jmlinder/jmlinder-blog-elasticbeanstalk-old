@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>My Blog</title>
     {% load static %}
-    <link rel="shortcut icon" type="image/x-icon" href="images/joe.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog/img/joe.ico' %}" />
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans"rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <!-- Navbar -->
+    {% comment %} Navbar {% endcomment %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/">JL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +34,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Projects</a>
           </li>
+          {% comment %} Social Media Links on right side{% endcomment %}
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://github.com/jmlinder">Github</a>
           </li>
@@ -42,6 +43,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" target="_blank" href="https://www.instagram.com/jmlinder7/" >Instagram</a>
+          </li>
+          <li class="nav-item justify-content-end">
+            <a class="nav-link" target="_blank" href="https://twitter.com/jmlinder/" >Twitter</a>
           </li>
         </ul>
       </div>
@@ -62,9 +66,9 @@
             </main>
             </div>
         </div>
-        <div class="container">Copyright 2019 Joseph Linder</div>
         <div class="container">
-          <a href="https://aws.amazon.com/what-is-cloud-computing"><img class="mb-5" src="{% static 'blog/img/powered_by_aws.png' %}" height=50 alt="Powered by AWS Cloud Computing"></a>
+          <p class="mb-1">© 2019 Joseph Linder</p>
+          <a href="https://aws.amazon.com/what-is-cloud-computing" target="_blank"><img class="mb-5" src="{% static 'blog/img/powered_by_aws.png' %}" height=50 alt="Powered by AWS Cloud Computing"></a>
         </div>
     </div>
   </body>
