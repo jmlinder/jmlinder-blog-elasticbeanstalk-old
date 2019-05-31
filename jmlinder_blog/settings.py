@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Placeholder secret key for local development
 SECRET_KEY = 'MYSECRETKEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -112,6 +113,8 @@ STATICFILES_DIRS = ['static']
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+
+# Local Database Config
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -158,5 +161,5 @@ if 'RDS_HOSTNAME' in os.environ:
     SECRET_KEY = os.environ['SECRET_KEY']
     ALLOWED_HOSTS = [
         os.environ['SITE_URL'],
-        os.environ['EB_ENV_URL']
+        os.environ['EB_ENV_URL'],
     ]
