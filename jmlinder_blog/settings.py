@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'qa_%u2*#v&7g=oxf-sd^6t@*uhp@g!1eilmln)*spe!ic)a@cs'
+SECRET_KEY = 'MYSECRETKEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
@@ -108,7 +108,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'
 STATICFILES_DIRS = ['static']
 
 # Database
@@ -156,7 +155,8 @@ if 'RDS_HOSTNAME' in os.environ:
     DEBUG = False
     STATIC_ROOT = 'static'
     STATICFILES_DIRS = []
+    SECRET_KEY = os.environ['SECRET_KEY']
     ALLOWED_HOSTS = [
-        'jmlinder.com',
-        'jmlinder2.mipvbpa28c.us-east-1.elasticbeanstalk.com'
+        os.environ['SITE_URL'],
+        os.environ['EB_ENV_URL']
     ]
