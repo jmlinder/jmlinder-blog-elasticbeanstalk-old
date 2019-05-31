@@ -10,4 +10,5 @@ urlpatterns = [
     path('post/<pk>/publish/', views.post_publish, name='post_publish'),
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
     path('about', views.about, name='about'),
+    path('projects', views.projects, name='projects'),
 ]
