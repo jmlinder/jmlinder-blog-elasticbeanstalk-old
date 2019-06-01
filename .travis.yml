@@ -2,7 +2,7 @@ sudo: required
 language: python
 python:
   - "3.6"
-install: pip install -r requirements.txt
+install: pip install -r requirements-dev.txt
 script: pytest
 deploy:
   provider: elasticbeanstalk
