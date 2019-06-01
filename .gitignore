@@ -1,6 +1,7 @@
 *.pyc
 .venv
 .vscode
+__init__.py
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
