@@ -1,6 +1,6 @@
 from django.test import RequestFactory
 from django.urls import reverse
-from django.contrib.auth.models import User, AnonymousUser
+#from django.contrib.auth.models import User, AnonymousUser
 from blog.views import *
 from mixer.backend.django import mixer
 from django.test import TestCase
