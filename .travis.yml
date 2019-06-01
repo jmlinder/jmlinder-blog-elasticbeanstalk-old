@@ -3,7 +3,7 @@ language: python
 python:
   - "3.6"
 install:
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements.txt
 services:
   - postgres
 env:
@@ -11,13 +11,14 @@ env:
     - PGPORT=5432
 before_script:
   - psql -c 'create database jmlinder;' -U postgres
+  - psql -c 'CREATE ROLE joe SUPERUSER;' -U postgres
 
 script: pytest
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "jmlinder"
-  env: "jmlinder-dev"
+  env: "jmlinder-staging"
   bucket_name:
     secure: "elasticbeanstalk-us-east-1-835178066609"
   bucket_path:
