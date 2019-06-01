@@ -2,7 +2,7 @@ sudo: required
 language: python
 python:
   - "3.6"
-install: pip install --user -r requirements.txt
+install: pip install -r requirements.txt
 script: pytest manage.py
 deploy:
   provider: elasticbeanstalk
@@ -14,7 +14,7 @@ deploy:
   bucket_path:
     secure: "jmlinder"
   on:
-    branch: master
+    branch: travis_config
   access_key_id:
     secure: "$AWS_ACCESS_KEY"
   secret_access_key:
