@@ -3,7 +3,7 @@ language: python
 python:
   - "3.6"
 install: pip install -r requirements.txt
-script: pytest ./blog/tests.py
+script: pytest
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"

@@ -6,20 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 
 
-# Shows the About Me page
-def about(request):
-    return render(request, 'blog/about.html')
-
-
-# Shows the Projects page
-def projects(request):
-    return render(request, 'blog/projects.html')
-
-
 # Shows the Main Page
 def post_list(request):
     posts = Post.objects.filter(
-        published_date__lte=timezone.now()).order_by('published_date')
+        published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
@@ -70,15 +60,11 @@ def post_draft_list(request):
 
 
 # Publish logic
+@login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_detail', pk=pk)
-
-
-def publish(self):
-    self.published_date = timezone.now()
-    self.save()
 
 
 # Delete logic
@@ -87,3 +73,13 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
+
+# Shows the About Me page
+def about(request):
+    return render(request, 'blog/about.html')
+
+
+# Shows the Projects page
+def projects(request):
+    return render(request, 'blog/projects.html')
