@@ -156,7 +156,7 @@ if 'RDS_HOSTNAME' in os.environ:
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
     DEBUG = False
-    STATIC_ROOT = 'static'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATICFILES_DIRS = []
     SECRET_KEY = os.environ['SECRET_KEY']
     ALLOWED_HOSTS = [
