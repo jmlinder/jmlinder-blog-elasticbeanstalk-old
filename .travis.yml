@@ -1,28 +1,37 @@
 sudo: required
 language: python
-python:
-  - "3.6"
-install:
-  - pip install -r requirements-dev.txt
-services:
-  - postgres
+python: "3.6"
+install: pip install -r requirements-dev.txt
+services: postgres
 env:
-  global:
-    - PGPORT=5432
+  global: PGPORT=5432
 before_script:
   - psql -c 'create database jmlinder;' -U postgres
   - psql -c 'CREATE ROLE joe SUPERUSER LOGIN;' -U postgres
-
 script: pytest
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "jmlinder"
-  env: "jmlinder-staging"
+  env:
+    ELASTIC_BEANSTALK_ENV: "jmlinder-staging"
+    global:
+      ADMIN:
+        secure: "$ADMIN"
+      DJANGO_SETTINGS_MODULE:
+        secure: "$DJANGO_SETTINGS_MODULE"
+      EB_ENV_URL:
+        secure: "$EB_ENV_URL"
+      EB_STAGE_ENV:
+        secure: "$EB_STAGE_ENV"
+      SECRET_KEY:
+        secure: "$SECRET_KEY"
+      SITE_URL:
+        secure: "$SITE_URL"
   bucket_name:
-    secure: "elasticbeanstalk-us-east-1-835178066609"
+    secure: "$BUCKET_NAME"
   bucket_path:
-    secure: "jmlinder"
+    secure: "$BUCKET_PATH"
   on:
     branch: travis_config
   access_key_id:
