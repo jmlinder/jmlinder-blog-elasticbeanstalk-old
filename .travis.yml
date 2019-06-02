@@ -13,25 +13,9 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "jmlinder"
-  env:
-    ELASTIC_BEANSTALK_ENV: "jmlinder-staging"
-    global:
-      ADMIN:
-        secure: "$ADMIN"
-      DJANGO_SETTINGS_MODULE:
-        secure: "$DJANGO_SETTINGS_MODULE"
-      EB_ENV_URL:
-        secure: "$EB_ENV_URL"
-      EB_STAGE_ENV:
-        secure: "$EB_STAGE_ENV"
-      SECRET_KEY:
-        secure: "$SECRET_KEY"
-      SITE_URL:
-        secure: "$SITE_URL"
-  bucket_name:
-    secure: "$BUCKET_NAME"
-  bucket_path:
-    secure: "$BUCKET_PATH"
+  env: "jmlinder-staging"
+  bucket_name: "elasticbeanstalk-us-east-1-835178066609"
+  bucket_path: "jmlinder"
   on:
     branch: travis_config
   access_key_id:
