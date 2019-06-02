@@ -13,7 +13,7 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "jmlinder"
-  env: "jmlinder-staging"
+  env: "jmlinder-prod"
   bucket_name: "elasticbeanstalk-us-east-1-835178066609"
   bucket_path: "jmlinder"
   on:
