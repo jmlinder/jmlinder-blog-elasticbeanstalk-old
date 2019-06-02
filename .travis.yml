@@ -17,7 +17,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-1-835178066609"
   bucket_path: "jmlinder"
   on:
-    branch: travis_config
+    branch: master
   access_key_id:
     secure: "$AWS_ACCESS_KEY"
   secret_access_key:
