@@ -19,6 +19,7 @@ deploy:
   region: "us-east-1"
   app: "jmlinder"
   env: "jmlinder-staging"
+  zip_file: "app-e82da-190601_174423"
   bucket_name:
     secure: "elasticbeanstalk-us-east-1-835178066609"
   bucket_path:
