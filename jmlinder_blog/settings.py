@@ -166,4 +166,6 @@ if 'RDS_HOSTNAME' in os.environ:
 
     # Staging Settings
     if 'EB_STAGE_URL' in os.environ:
-        ALLOWED_HOSTS.append(os.environ['EB_STAGE_URL'])
+        ALLOWED_HOSTS = [
+            os.environ['EB_STAGE_URL']
+        ]
