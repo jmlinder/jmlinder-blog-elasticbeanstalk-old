@@ -159,13 +159,16 @@ if 'RDS_HOSTNAME' in os.environ:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATICFILES_DIRS = []
     SECRET_KEY = os.environ['SECRET_KEY']
-    ALLOWED_HOSTS = [
-        os.environ['SITE_URL'],
-        os.environ['EB_ENV_URL'],
-    ]
 
     # Staging Settings
     if 'EB_STAGE_URL' in os.environ:
         ALLOWED_HOSTS = [
             os.environ['EB_STAGE_URL']
+        ]
+
+    # Production Settings
+    if 'SITE_URL' in os.environ:
+        ALLOWED_HOSTS = [
+            os.environ['SITE_URL'],
+            os.environ['EB_ENV_URL'],
         ]
