@@ -27,7 +27,8 @@ SECRET_KEY = 'MYSECRETKEY'
 # DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost'
+    'localhost',
+    '127.0.0.1'
 ]
 
 # Application definition
