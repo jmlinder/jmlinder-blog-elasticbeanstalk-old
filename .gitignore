@@ -7,3 +7,4 @@
 !.elasticbeanstalk/*.global.yml
 .ebextensions/securelistener-clb.config
 .ebextensions/secret-env-vars.config
+.ebextensions/https-instance-securitygroup.config
