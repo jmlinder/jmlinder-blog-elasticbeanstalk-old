@@ -1,5 +1,6 @@
 *.pyc
 .venv
+.joe
 .vscode
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
